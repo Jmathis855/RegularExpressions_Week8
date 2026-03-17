@@ -92,7 +92,7 @@ Sometimes you actually want to search for the literal version of a special chara
 match = re.search(r"\$\d","I have $1.")
 match.group()
 ```
-
+the backslash \ will serve to keep other characters that may interfere bc they have different contexts bc of $ meaning look at the end of the string
 ## Searches with Repetition
 
 Wildcards add a huge amount of flexibility to our searches, but so far we've still had to list as many characters in our pattern as we want to match in our string. What if some characters repeat themselves, perhaps an unknown number of times?
@@ -137,7 +137,7 @@ Repetition characters can also be used in combination with wildcards.
 match = re.search(r"C.+G","GCTTTGGAAAGG")
 match.group()
 ```
-
+    any pattern that ends with a c and ends with a g will match
 ## Capturing Text from Searches
 
 In the examples above, we looked at search output that matched the entire pattern used in our search. However, in many cases we want to capture specific portions of text that are embedded in our larger pattern. For instance, maybe we're interested in the two nucleotides that come just before or after stretches of 2 or more As. To capture just those characters, we can wrap them in parentheses.
