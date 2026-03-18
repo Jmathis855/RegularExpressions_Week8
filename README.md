@@ -103,6 +103,7 @@ To match one or more instances of a character, we can use `+`. Here, we're looki
 match = re.search(r"A+","GCTTTGGAAAGG")
 match.group()
 ```
+    I
 
 To match a specific number of instances of a character, we can put the specific number inside curly braces
 
@@ -110,13 +111,13 @@ To match a specific number of instances of a character, we can put the specific 
 match = re.search(r"A{2}","GCTTTGGAAAGG")
 match.group()
 ```
-
+        Would return just literally 2 A's
 To match _zero_ or more instances of a character, we can use `*`. To get a feel for how `*` works, compare the outputs from the following two searches
 
 ```
 matchOne = re.search(r"CT*G","GCTTTGGAAAGG")
 matchOne.group()
-
+    In this one, it makes sure it starts with c and ends with g. Can have any number of Ts in there.
 matchTwo = re.search(r"GT*G","GCTTTGGAAAGG")
 matchTwo.group()
 ```
@@ -146,7 +147,7 @@ In the examples above, we looked at search output that matched the entire patter
 match = re.search(r"(\w\w)AA+(\w\w)","GCTTTGCAAAAAGG")
 match.group()
 ```
-
+        Minimum amount of As here is 2
 Note that the search and the output produced by `.group()` look just like they would without the parentheses. However, the parentheses allow us to go back and look at just those sections we captured. To do this, we use the `.groups()` method from our result
 
 `match.groups()`
